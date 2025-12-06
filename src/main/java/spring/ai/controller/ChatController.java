@@ -19,8 +19,8 @@ public class ChatController {
 
     @Operation(summary = "챗봇과 대화하기 (DTO)", description = "사용자의 메시지를 DTO로 전송하고 AI의 응답을 DTO로 반환합니다.")
     @PostMapping("/ask-dto")
-    public ApiResponse<ChatResponseDto.ChatResponse> askChatbotWithDto(
-            @RequestBody ChatRequestDto.ChatRequest request) {
+    public ApiResponse<ChatResponseDto> askChatbotWithDto(
+            @RequestBody ChatRequestDto request) {
         return ApiResponse.onSuccess(chatService.getChatResponse(request));
     }
 }

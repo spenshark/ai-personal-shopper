@@ -7,6 +7,7 @@ import lombok.Getter;
 import spring.ai.global.exception.code.status.GlobalErrorStatus;
 import spring.ai.global.exception.code.status.SuccessStatus;
 
+import java.awt.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -24,6 +25,11 @@ public class ApiResponse<T> {
     //성공한 경우 응답 생성
     public static <T> ApiResponse<T> onSuccess(T result) {
         return new ApiResponse<>(true, SuccessStatus._OK.getCode(), SuccessStatus._OK.getMessage(), result);
+    }
+
+    // 성공한 경우 응답 생성 (메시지 포함)
+    public static <T> ApiResponse<T> onSuccess(T result, String message) {
+        return new ApiResponse<>(true, SuccessStatus._OK.getCode(), message, result);
     }
 
     // 실패한 경우 응답 생성
