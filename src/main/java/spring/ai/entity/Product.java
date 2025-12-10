@@ -2,6 +2,9 @@ package spring.ai.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import spring.ai.entity.enums.Category;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,11 +21,14 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String category;
+    private Category category;
 
-    @Column(nullable = false)
-    private String tags;
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "product_tags", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "tag")
+    private List<String> tags;
 
     @Column(nullable = false)
     private String description;
