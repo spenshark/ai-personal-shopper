@@ -52,3 +52,9 @@ src/test/resources/schema.sql
 
 # GEMINI 관련 파일
 GEMINI.md
+
+# postgres 데이터 디렉토리
+postgres_data/
+
+# 환경변수
+.env

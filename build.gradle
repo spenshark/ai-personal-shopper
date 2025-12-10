@@ -46,8 +46,11 @@ dependencies {
 	// [보안 패치] commons-lang3 버전을 3.18.0으로 강제 업그레이드하여 취약점 해결
 	implementation 'org.apache.commons:commons-lang3:3.18.0'
 
-	// MySQL Driver
-	runtimeOnly 'com.mysql:mysql-connector-j'
+	// PGVector Store
+	implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
+
+	// PostgreSQL Driver
+	runtimeOnly 'org.postgresql:postgresql'
 
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
