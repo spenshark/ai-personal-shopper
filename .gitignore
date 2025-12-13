@@ -58,3 +58,6 @@ postgres_data/
 
 # 환경변수
 .env
+
+# 시스템 프롬포트
+/src/main/resources/prompts/system-prompt.st

@@ -22,14 +22,10 @@ public enum GlobalErrorStatus implements ApiErrorCodeInterface {
     DATABASE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SYS5001", "데이터베이스 오류 발생"),
 
     // User 관련
-    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER4041", "사용자를 찾을 수 없습니다."),
+    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER4004", "사용자를 찾을 수 없습니다."),
 
-    // Recipe 관련
-    RECIPE_NOT_FOUND(HttpStatus.NOT_FOUND, "RECIPE4041", "레시피를 찾을 수 없습니다."),
-
-    // 재고 관련
-    INVENTORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "INVENTORY4001", "재고에 해당 재료가 없습니다. 요리를 실행할 수 없습니다."),
-    INVENTORY_NOT_ENOUGH(HttpStatus.BAD_REQUEST, "INVENTORY4002", "요리에 필요한 재료의 양이 부족합니다."),
+    // ChatRoom
+    CHAT_ROOM_NOT_FOUND(HttpStatus.NOT_FOUND, "CHATROOM4004", "채팅방을 찾을 수 없습니다."),
 
     // For test
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "예외처리 테스트입니다."),

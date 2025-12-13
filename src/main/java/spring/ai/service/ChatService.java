@@ -4,5 +4,5 @@ import spring.ai.dto.ChatRequestDto;
 import spring.ai.dto.ChatResponseDto;
 
 public interface ChatService {
-    ChatResponseDto getChatResponse(ChatRequestDto request);
+    ChatResponseDto chat(ChatRequestDto request);
 }
