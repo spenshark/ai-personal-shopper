@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import spring.ai.converter.ChatConverter;
 import spring.ai.dto.ChatRequestDto;
 import spring.ai.dto.ChatResponseDto;
 import spring.ai.global.base.ApiResponse;
@@ -15,7 +16,7 @@ import spring.ai.service.ChatService;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/chat")
-@Tag(name = "Chatbot API", description = "Spring AI를 활용한 간단한 챗봇 테스트")
+@Tag(name = "Chatbot API", description = "Spring AI를 활용한 챗봇 API")
 public class ChatController {
 
     private final ChatService chatService;
@@ -24,5 +25,11 @@ public class ChatController {
     @PostMapping("")
     public ApiResponse<ChatResponseDto> chat(@RequestBody ChatRequestDto request) {
         return ApiResponse.onSuccess(chatService.chat(request));
+    }
+
+    @Operation(summary = "RAG 챗봇과 대화하기", description = "사용자의 메시지를 기반으로 VectorDB에서 관련 상품을 찾아 답변을 생성합니다.")
+    @PostMapping("/rag")
+    public ApiResponse<ChatResponseDto> ragChat(@RequestBody ChatRequestDto request) {
+        return ApiResponse.onSuccess(chatService.ragChat(request));
     }
 }
