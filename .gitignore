@@ -61,3 +61,6 @@ postgres_data/
 
 # 시스템 프롬포트
 /src/main/resources/prompts/system-prompt.st
+
+# csv 파일
+/src/main/resources/products.csv
